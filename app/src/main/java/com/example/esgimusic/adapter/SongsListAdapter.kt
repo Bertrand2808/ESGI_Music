@@ -1,5 +1,7 @@
 package com.example.esgimusic.adapter
 
+import com.example.esgimusic.PlayerActivity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -32,6 +34,7 @@ class SongsListAdapter(private val songIdList : List<String>) :
                                 binding.root.setOnClickListener {
                                     // Start playing song
                                     MyExoplayer.startPlaying(binding.root.context, song)
+                                    it.context.startActivity(Intent(it.context, PlayerActivity::class.java))
                                 }
                             }
                         }

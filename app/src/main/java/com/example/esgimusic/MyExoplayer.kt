@@ -9,6 +9,9 @@ object MyExoplayer {
     private var exoPlayer: ExoPlayer? = null
     private var currentSong: SongsModel? = null
 
+    fun getCurrentSong() : SongsModel?{
+        return currentSong
+    }
     fun getInstance() : ExoPlayer?{
         return exoPlayer
     }
