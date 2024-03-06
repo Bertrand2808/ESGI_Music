@@ -23,10 +23,11 @@ class PlayerActivity : AppCompatActivity() {
             Glide.with(binding.songCoverImageView).load(coverUrl)
                 .circleCrop()
                 .into(binding.songCoverImageView)
+            Glide.with(binding.songGifImageView).load(R.drawable.media_playing)
+                .circleCrop()
+                .into(binding.songGifImageView)
             exoPlayer = MyExoplayer.getInstance()!!
             binding.playerView.player = exoPlayer
-
         }
-
     }
 }
