@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "755703166661",
+    "project_id": "esgi-music",
+    "storage_bucket": "esgi-music.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755703166661:android:175d48caac0cddba78a2ac",
+        "android_client_info": {
+          "package_name": "com.example.esgimusic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4eD1GJrbRXh_8eEmCC9TtghNg1qD8EiI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
