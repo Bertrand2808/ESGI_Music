@@ -5,6 +5,10 @@
 ESGI Music est une application Android conçue pour permettre aux utilisateurs de parcourir, rechercher et écouter une variété de musiques, et même d'enregistrer ses propres sons. 
 L'application utilise Kotlin comme langage de programmation principal et Firebase pour le stockage en ligne, la gestion de la base de données et l'authentification des utilisateurs.
 
+
+![img_3.png](img_3.png)
+
+
 ## Fonctionnalités
 
 - **Authentification** : Les utilisateurs peuvent se connecter et s'inscrire pour accéder à l'application.
