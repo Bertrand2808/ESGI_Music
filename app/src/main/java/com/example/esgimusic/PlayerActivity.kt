@@ -1,5 +1,6 @@
 package com.example.esgimusic
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -37,6 +38,26 @@ class PlayerActivity : AppCompatActivity() {
             binding.playerView.player = exoPlayer
             binding.playerView.showController()
             exoPlayer.addListener(playerListener)
+        }
+        binding.bottomNavigation.setOnNavigationItemSelectedListener {
+            when(it.itemId) {
+                R.id.navigation_home -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_search -> {
+                    val intent = Intent(this, SearchActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_library -> {
+                    val intent = Intent(this, LibraryActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
         }
     }
 

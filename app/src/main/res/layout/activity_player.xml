@@ -7,63 +7,78 @@
     android:orientation="vertical"
     android:background="@color/black"
     android:padding="16dp"
-    android:gravity="center_horizontal"
-    tools:context=".PlayerActivity">
+    android:gravity="center_horizontal">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Now Playing"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:gravity="center_horizontal"
-        android:layout_marginBottom="16dp"
-        />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
 
-
-    <FrameLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:id="@+id/song_cover_image_view"
-            android:layout_gravity="center"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Now Playing"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
             />
 
-        <ImageView
-            android:layout_width="220dp"
-            android:layout_height="220dp"
-            android:id="@+id/song_gif_image_view"
-            android:visibility="invisible"
-            android:layout_gravity="center"/>
-    </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:id="@+id/song_cover_image_view"
+                android:layout_gravity="center"
+                />
+
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:id="@+id/song_gif_image_view"
+                android:visibility="invisible"
+                android:layout_gravity="center"/>
+        </FrameLayout>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="22sp"
-        tools:text="Song name"
-        android:textColor="@color/white"
-        android:layout_marginTop="16dp"
-        android:textStyle="bold"
-        android:id="@+id/song_title_text_view"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        tools:text="Album"
-        android:textColor="@color/white"
-        android:layout_marginTop="8dp"
-        android:id="@+id/song_subtitle_text_view"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            tools:text="Song name"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:id="@+id/song_title_text_view"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            tools:text="Album"
+            android:textColor="@color/white"
+            android:layout_marginTop="8dp"
+            android:id="@+id/song_subtitle_text_view"/>
 
-    <androidx.media3.ui.PlayerView
+        <androidx.media3.ui.PlayerView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            app:hide_on_touch="false"
+            app:show_timeout="0"
+            android:id="@+id/player_view"
+            />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="8dp"
-        app:hide_on_touch="false"
-        app:show_timeout="0"
-        android:id="@+id/player_view"
-        />
+        android:layout_height="58dp"
+        app:itemIconSize="24dp"
+        app:itemPaddingTop="5dp"
+        app:menu="@menu/bottom_nav_menu" />
+
 </LinearLayout>

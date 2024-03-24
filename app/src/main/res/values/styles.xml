@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Style personnalisé pour le texte de BottomNavigationView -->
+    <style name="BottomNavigationViewTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingTop">10dp</item> <!-- Ajustez cette valeur pour décaler le texte vers le bas -->
+    </style>
+
+</resources>
