@@ -307,9 +307,9 @@ class RecordActivity : AppCompatActivity() {
                             val songData = hashMapOf(
                                 "count" to 0,
                                 "coverUrl" to "https://firebasestorage.googleapis.com/v0/b/esgi-music.appspot.com/o/song_images%2Frecord.png?alt=media&token=29fe028f-fa6f-4424-bf4b-e7611e4256cb",
-                                "id" to filenameNew,
+                                "id" to rawName,
                                 "subtitle" to "enregistrement",
-                                "title" to filenameNew,
+                                "title" to rawName,
                                 "url" to downloadUrl
                             )
                             val songsRef = firestore.collection("songs")
