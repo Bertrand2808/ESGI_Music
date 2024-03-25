@@ -47,7 +47,11 @@ class SongsListActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
-
+                R.id.navigation_record -> {
+                    val intent = Intent(this, RecordActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
                 else -> false
             }
         }
