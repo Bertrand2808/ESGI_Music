@@ -17,6 +17,7 @@ L'application utilise Kotlin comme langage de programmation principal et Firebas
 - **Liste des chansons** : La `SongsListActivity` affiche une liste de chansons disponibles dans une catégorie ou section spécifique.
 - **Bibliothèque** : La `LibraryActivity` permet aux utilisateurs de parcourir les différentes catégories de musique disponibles.
 - **Recherche** : La `SearchActivity` offre aux utilisateurs la possibilité de rechercher des chansons par titre.
+- **Enregistrement** : La `RecordActivity` permet aux utilisateurs d'enregistrer leur propre musique ou sons.
 
 ## Architecture
 
@@ -29,6 +30,7 @@ L'application utilise Kotlin comme langage de programmation principal et Firebas
 - **SongsListActivity** : Affiche une liste de chansons d'une catégorie ou section spécifique.
 - **LibraryActivity** : Permet aux utilisateurs de parcourir les catégories de musique disponibles.
 - **SearchActivity** : Permet aux utilisateurs de rechercher des chansons.
+- **RecordActivity** : Permet aux utilisateurs d'enregistrer leur propre musique ou sons.
 
 ### Adapters
 
