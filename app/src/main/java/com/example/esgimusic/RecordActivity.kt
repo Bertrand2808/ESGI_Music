@@ -284,7 +284,11 @@ class RecordActivity : AppCompatActivity() {
                 val newFileRef = storageRef.child(filenameNew)
 
                 // Remove file extension from filenameNew for Firestore
-                val rawName = filenameNew.substring(0, filenameNew.lastIndexOf('.'))
+                val rawName = if (filenameNew.contains('.')) {
+                    filenameNew.substring(0, filenameNew.lastIndexOf('.'))
+                } else {
+                    filenameNew
+                }
 
                 newFileRef.putFile(fileUri)
                     .addOnSuccessListener { uploadTask ->
