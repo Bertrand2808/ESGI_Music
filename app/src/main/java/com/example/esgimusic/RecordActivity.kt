@@ -292,7 +292,6 @@ class RecordActivity : AppCompatActivity() {
                             val downloadUrl = uri.toString()
                             Log.d("UploadFile", "File uploaded successfully. Download URL: $downloadUrl")
 
-                            // Add the song to Firestore without the file extension and with the download URL
                             val firestore = FirebaseFirestore.getInstance()
                             val enregistrementRef = firestore.collection("category").document("Enregistrement")
                             enregistrementRef.update("songs", FieldValue.arrayUnion(rawName))
@@ -303,7 +302,6 @@ class RecordActivity : AppCompatActivity() {
                                     Log.e("Firestore", "Failed to add song to Enregistrement collection: ${exception.message}", exception)
                                 }
 
-                            // Now you can also add the song to the 'songs' collection with additional data if needed
                             val songData = hashMapOf(
                                 "count" to 0,
                                 "coverUrl" to "https://firebasestorage.googleapis.com/v0/b/esgi-music.appspot.com/o/song_images%2Frecord.png?alt=media&token=29fe028f-fa6f-4424-bf4b-e7611e4256cb",

@@ -26,8 +26,8 @@ class WaveView : View {
 
     private var waveType
             : Int? = null
-    private var centerLineColor: Int = Color.BLACK
-    private var centerLineWidth = 1
+    private var centerLineColor: Int = Color.WHITE
+    private var centerLineWidth = 2
     private var lineColor: Int = Color.GREEN
     private var lineWidth = 10
     private var lineSpace = 30
@@ -44,8 +44,8 @@ class WaveView : View {
     private fun init() {
 
         waveType = 0
-        centerLineColor = Color.BLUE
-        centerLineWidth =1
+        centerLineColor = Color.WHITE
+        centerLineWidth = 2
         lineColor =  Color.GREEN
         lineWidth = 5
         lineSpace = 5

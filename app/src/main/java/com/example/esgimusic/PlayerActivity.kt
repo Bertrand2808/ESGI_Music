@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
 import com.bumptech.glide.Glide
@@ -27,7 +28,7 @@ class PlayerActivity : AppCompatActivity() {
 
         MyExoplayer.getCurrentSong()?.apply {
             binding.songTitleTextView.text = title
-            binding.songSubtitleTextView.text  = subtitle
+            binding.songSubtitleTextView.text = subtitle
             Glide.with(binding.songCoverImageView).load(coverUrl)
                 .circleCrop()
                 .into(binding.songCoverImageView)
@@ -39,30 +40,16 @@ class PlayerActivity : AppCompatActivity() {
             binding.playerView.showController()
             exoPlayer.addListener(playerListener)
         }
-        binding.bottomNavigation.setOnNavigationItemSelectedListener {
-            when(it.itemId) {
-                R.id.navigation_home -> {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.navigation_search -> {
-                    val intent = Intent(this, SearchActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.navigation_library -> {
-                    val intent = Intent(this, LibraryActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.navigation_record -> {
-                    val intent = Intent(this, RecordActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                else -> false
+
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finish()
             }
+        }
+        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+
+        binding.backButton.setOnClickListener {
+            onBackPressedCallback.handleOnBackPressed()
         }
     }
 
@@ -77,4 +64,5 @@ class PlayerActivity : AppCompatActivity() {
             binding.songGifImageView.visibility = View.INVISIBLE
         }
     }
+
 }

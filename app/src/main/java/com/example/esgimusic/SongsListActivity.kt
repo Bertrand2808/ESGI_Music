@@ -3,6 +3,7 @@ package com.example.esgimusic
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -29,31 +30,15 @@ class SongsListActivity : AppCompatActivity() {
             .into(binding.coverImageView)
         setupSongsListRecyclerView()
 
-        binding.bottomNavigation.menu.findItem(R.id.navigation_library).isChecked = true
-        binding.bottomNavigation.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.navigation_home -> {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.navigation_search -> {
-                    val intent = Intent(this, SearchActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.navigation_library -> {
-                    val intent = Intent(this, LibraryActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.navigation_record -> {
-                    val intent = Intent(this, RecordActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                else -> false
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                finish()
             }
+        }
+        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+
+        binding.backButton.setOnClickListener {
+            onBackPressedCallback.handleOnBackPressed()
         }
     }
 
