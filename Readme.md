@@ -61,6 +61,30 @@ L'application utilise Kotlin comme langage de programmation principal et Firebas
 3. **Initialisation des services Firebase** : Initialisez Firebase Authentication, Firestore et Storage dans votre application.
 4. **Déploiement** : Une fois l'application développée et testée, vous pouvez la déployer sur Google Play Store pour la rendre accessible aux utilisateurs.
 
+## Générer l'APK 
+
+Pour générer l'APK de l'application, vous pouvez utiliser Android Studio ou la ligne de commande.
+
+### Android Studio
+
+1. Ouvrez le projet dans Android Studio.
+2. Cliquez sur `Build` dans la barre de menu.
+3. Sélectionnez `Build Bundle(s) / APK(s)` dans le menu déroulant.
+4. Cliquez sur `Build APK(s)` pour générer l'APK de l'application.
+5. L'APK sera généré dans le répertoire `app/build/outputs/apk/debug/`.
+
+### Ligne de commande
+
+1. Ouvrez une fenêtre de terminal.
+2. Accédez au répertoire racine du projet.
+3. Exécutez la commande suivante pour générer l'APK de l'application :
+
+```bash
+./gradlew assembleDebug
+```
+
+4. L'APK sera généré dans le répertoire `app/build/outputs/apk/debug/`.
+
 ## Auteur
 
 -Aurélien (https://github.com/nandreau)
