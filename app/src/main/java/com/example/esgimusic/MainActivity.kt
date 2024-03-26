@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
-import com.example.esgimusic.SongsListActivity.Companion.category
 import com.example.esgimusic.adapter.CategoryAdapter
 import com.example.esgimusic.databinding.ActivityMainBinding
 import com.example.esgimusic.models.CategoryModel
@@ -21,9 +20,7 @@ import com.example.esgimusic.models.SongsModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.google.firebase.firestore.toObject
 import com.google.firebase.firestore.toObjects
-import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -53,6 +50,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.navigation_library -> {
                     val intent = Intent(this, LibraryActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.navigation_record -> {
+                    val intent = Intent(this, RecordActivity::class.java)
                     startActivity(intent)
                     true
                 }

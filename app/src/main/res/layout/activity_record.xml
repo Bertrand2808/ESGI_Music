@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--XML code for activity_main.xml-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blueDark"
+    android:padding="16dp"
+    android:orientation="vertical"
+    >
+
+    <com.example.esgimusic.WaveView
+        android:id="@+id/voice_wave_view"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <FrameLayout
+        android:layout_width="285dp"
+        android:layout_height="80dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/rectangle_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.769">
+
+        <ImageButton
+            android:id="@+id/button_start_record"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:background="#ffffff"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/button_voice_record" />
+
+        <ImageButton
+            android:id="@+id/button_pause_record"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:background="#ffffffff"
+            android:scaleType="centerCrop"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/button_voice_record_pause" />
+
+        <ImageButton
+            android:id="@+id/button_continue_record"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:background="#ffffffff"
+            android:scaleType="centerCrop"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/button_voice_record_continue" />
+
+        <ImageButton
+            android:id="@+id/button_delete_record"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center_vertical|left"
+            android:layout_marginLeft="20dp"
+            android:background="#ffffff"
+            android:scaleType="centerCrop"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/button_voice_record_delete" />
+
+        <ImageButton
+            android:id="@+id/button_stop_record"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="20dp"
+            android:background="#ffffff"
+            android:scaleType="centerCrop"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/button_voice_record_stop" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/record_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.56" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        app:itemIconSize="24dp"
+        app:itemPaddingTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+</androidx.constraintlayout.widget.ConstraintLayout>
